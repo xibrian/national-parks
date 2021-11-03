@@ -14,11 +14,11 @@ function GetActivityHooks() {
 
     // this function is called whenever an activity button is clicked
     function findParks(input) {
-        console.log('it works');
+        console.log(input); 
     }
 
     const Template = ({ input }) => (
-        <button className="button" onClick={findParks}>
+        <button className="button" onClick={() => findParks(input)}>
           <p>{input}</p>
         </button>
       );
