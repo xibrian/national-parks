@@ -1,13 +1,13 @@
 import './App.css';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Activity2 from './components/Activity2'
+import Activity from './components/Activity'
 
 function App() {
   return (
     <div>
       <Header />
-      <Activity2 />
+      <Activity />
       <Footer />
     </div>
   );
