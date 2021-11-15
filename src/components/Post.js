@@ -16,17 +16,25 @@ const Post = (park) => {
       //console.log(images);
   }
 
-  return (
-    <div className="parkListing">
-      <h2>{park.name}</h2>
-      <a href={park.url} target="_blank" rel="noreferrer">{park.url}</a>
-      
-      <p>{park.designation} in {park.state}</p>
-      <button className='imageButton' onClick={() => findImages(park)}>
-          <p>Click to view park images</p>
-      </button>
-    </div>
-  );
+  if (park.name !== '') {
+    return (
+        <div className="parkListing">
+            <h2>{park.name}</h2>
+            <a href={park.url} target="_blank" rel="noreferrer">{park.url}</a>
+            <p>{park.designation}</p>
+            <p>{park.state}</p>
+            <button className='imageButton' onClick={() => findImages(park)}>
+                <p>Click to view park images</p>
+            </button>
+        </div>
+    );
+  }
+
+  else {
+      return (
+        <div></div>
+      );
+  }
 };
 
 export default Post;

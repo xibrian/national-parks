@@ -11,8 +11,15 @@ function GetActivityHooks() {
         designation: '', 
         fullName: '', 
         url: ''}
-    ]
-    const [activities, setActivities] = useState(null);
+    ];
+
+    // sometimes activities/what the API call returns is null, so this placeholder ensure that activities.map doesn't error
+    const testActivityListing = [
+        {id: '', 
+        name: ''}
+    ];
+
+    const [activities, setActivities] = useState(testActivityListing);
     const [parks, setParks] = useState(testParkListing);
 
     useEffect(() => {
