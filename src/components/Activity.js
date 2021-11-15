@@ -5,6 +5,7 @@ import './base.css'
 // taken from https://jasonwatmore.com/post/2020/01/27/react-fetch-http-get-request-examples
 // and https://stackblitz.com/edit/react-http-get-request-examples-fetch?file=App/GetRequestHooks.jsx
 function GetActivityHooks() {
+    // placeholder variable to prevent null errors
     const testParkListing = [
         {states: '', 
         parkCode: '', 
@@ -13,7 +14,7 @@ function GetActivityHooks() {
         url: ''}
     ];
 
-    // sometimes activities/what the API call returns is null, so this placeholder ensure that activities.map doesn't error
+    // sometimes activities is null, so this placeholder ensure that activities.map doesn't error
     const testActivityListing = [
         {id: '', 
         name: ''}
@@ -27,7 +28,7 @@ function GetActivityHooks() {
             .then(response => response.json())
             .then(data => setActivities(data.data));
     }, []);
-    console.log(activities); //sometimes activities is null, which is why it errors
+    console.log(activities); //sometimes activities is null
 
     // this function is called whenever an activity button is clicked
     function findParks(input, id) {
@@ -40,6 +41,7 @@ function GetActivityHooks() {
         console.log(parks);
     }
 
+    // template for activity buttons
     const Template = ({ input, id }) => (
         <button className="button" onClick={() => findParks(input, id)}>
           <p text-align='center'>{input}</p>

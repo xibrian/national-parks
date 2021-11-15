@@ -5,6 +5,7 @@ const Post = (park) => {
 
   //const [images, setImages] = useState(null);
 
+  // finds the images associated with a certain park code
   function findImages(park) {
       console.log(park);
       const url = "https://developer.nps.gov/api/v1/webcams?parkCode=" + park.parkCode + "&api_key=9EgzNdOHHgIrzuN7bPg4S4gHOdBQN55oqN2i6RAc";
@@ -16,6 +17,7 @@ const Post = (park) => {
       //console.log(images);
   }
 
+  // prevents placeholder (testParkListing in Activity.js) from being displayed
   if (park.name !== '') {
     return (
         <div className="parkListing">
