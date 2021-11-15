@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Post from "./Post";
 import './base.css'
 
-// taken from https://jasonwatmore.com/post/2020/01/27/react-fetch-http-get-request-examples
-// and https://stackblitz.com/edit/react-http-get-request-examples-fetch?file=App/GetRequestHooks.jsx
 function GetActivityHooks() {
     // placeholder variable to prevent null errors
     const testParkListing = [
